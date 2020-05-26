@@ -8,6 +8,9 @@
         <subreddit :category="cats[2]"></subreddit>
         <subreddit :category="cats[3]"></subreddit>
         <subreddit :category="cats[4]"></subreddit>
+        <subreddit :category="cats[5]"></subreddit>
+
+        
   </div>
 </template>
 
@@ -24,7 +27,7 @@ export default {
   },
   data:function(){
     return{
-      cats:["food","sports","space","art","movies","funny"]
+      cats:["movies","sports","space","art","funny","food"]
     }
   }
 }

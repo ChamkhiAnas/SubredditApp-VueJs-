@@ -38,7 +38,7 @@ export default {
         this.$http.get('https://www.reddit.com/r/'+this.category+'/top.json?limit=5')
         .then((res)=>{
             this.subreddits=res.data.data.children
-            console.log(this.subreddits)
+            console.log(this.subreddits[0].data.title)
         })
         ;
     }
