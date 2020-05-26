@@ -3,14 +3,21 @@
     <header>
         <h3>Subreddits</h3>
     </header>
+        <subreddit></subreddit>
+
   </div>
 </template>
 
 <script>
 
+  import Subreddit from './components/Subreddit'
+
 export default {
   name: 'App',
   components: {
+
+    Subreddit
+
   }
 }
 </script>
