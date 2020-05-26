@@ -4,7 +4,9 @@
 
         <h2>{{category | maj}}</h2>
          <ul class="item-list">
-              <li v-for='(post,indx) in subreddits' :key="indx">{{post.data.title}}</li>
+              <li v-for='(post,indx) in subreddits' :key="indx">
+            <subreddits :item="post"></subreddits>
+              </li>
         </ul>
 
     </div>
@@ -14,6 +16,7 @@
 
 
 <script>
+import Subreddits from './Subreddits'
 
 export default {
 
@@ -27,6 +30,9 @@ export default {
 
         }
     },
+    components: {
+        Subreddits
+    },
     filters:{
         maj:function(value){
             if (!value)  return '';
@@ -38,7 +44,7 @@ export default {
         this.$http.get('https://www.reddit.com/r/'+this.category+'/top.json?limit=5')
         .then((res)=>{
             this.subreddits=res.data.data.children
-            console.log(this.subreddits[0].data.title)
+            console.log(this.subreddits[0].data.permalink)
         })
         ;
     }
