@@ -2,9 +2,9 @@
 
     <div class="subreddits container">
 
-        <h2>Food</h2>
+        <h2>{{category | maj}}</h2>
          <ul class="item-list">
-              <li v-for='(post,indx) in subreddits' :key="indx">{{post.name}}</li>
+              <li v-for='(post,indx) in subreddits' :key="indx">{{post.data.title}}</li>
         </ul>
 
     </div>
@@ -23,18 +23,24 @@ export default {
         return{
 
             subreddits:[
-                {
-                name:'My Subreddit 1'
-                },
-                {
-                name:'My Subreddit 2'
-                },
-                {
-                name:'My Subreddit 3'
-                },
             ],
 
         }
+    },
+    filters:{
+        maj:function(value){
+            if (!value)  return '';
+            value=value.toString();
+            return value.charAt(0).toUpperCase()+value.slice(1);
+        }
+    },
+    created:function(){
+        this.$http.get('https://www.reddit.com/r/'+this.category+'/top.json?limit=5')
+        .then((res)=>{
+            this.subreddits=res.data.data.children
+            console.log(this.subreddits)
+        })
+        ;
     }
 
 

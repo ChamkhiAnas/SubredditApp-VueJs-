@@ -3,8 +3,11 @@
     <header>
         <h3>Subreddits</h3>
     </header>
-        <subreddit></subreddit>
-
+        <subreddit :category="cats[0]"></subreddit>
+        <subreddit :category="cats[1]"></subreddit>
+        <subreddit :category="cats[2]"></subreddit>
+        <subreddit :category="cats[3]"></subreddit>
+        <subreddit :category="cats[4]"></subreddit>
   </div>
 </template>
 
@@ -18,6 +21,11 @@ export default {
 
     Subreddit
 
+  },
+  data:function(){
+    return{
+      cats:["food","sports","space","art","movies","funny"]
+    }
   }
 }
 </script>
