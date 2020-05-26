@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-        <h3>Subreddits</h3>
+        <h3>Subreddits created by <a  target="_blank" href="https://github.com/ChamkhiAnas">@chamkhiAnas</a></h3>
     </header>
         <subreddit :category="cats[0]"></subreddit>
         <subreddit :category="cats[1]"></subreddit>
@@ -43,9 +43,10 @@ body {
 }
 a{
   text-decoration:none;
+  color:inherit;
 }
 header{
-  background:coral;
+  background:#ff7979;
   color:#ffffff;
   padding:10px;
   text-align:center;
