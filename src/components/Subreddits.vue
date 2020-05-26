@@ -7,7 +7,12 @@
         </a>
         <br/>
         <div class="stats">
-            
+
+            <i class="material-icons">thumb_up_alt</i>
+            {{item.data.score}}
+            <i class="material-icons">rate_review</i>
+            {{item.data.num_comments}}
+
         </div>
     </div>
     </div>
@@ -53,5 +58,20 @@ export default {
     margin-right:12px;
     border-radius:5px;
 }
-
+.subreddit .details .title{
+    font-size:15px;
+    margin-bottom:5px;
+    color:steelblue;
+}
+.subreddit .stats{
+    font-size:12px;
+    margin-right:4px;
+    margin-top:7px;
+    display:inline-block;
+    color:#666666
+}
+.subreddit .stats i{
+    font-size:10px;
+    margin-right:2px;
+}
 </style>

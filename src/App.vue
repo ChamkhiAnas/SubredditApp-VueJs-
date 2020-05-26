@@ -27,7 +27,7 @@ export default {
   },
   data:function(){
     return{
-      cats:["movies","sports","space","art","funny","food"]
+      cats:["art","sports","space","movies","funny","food"]
     }
   }
 }
